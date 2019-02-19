@@ -26,6 +26,7 @@ const profileReducer = (state=initialState, action)=>{
                 profile:null,
                 loading:false
             }
+        
         default:
             return state;
     }
