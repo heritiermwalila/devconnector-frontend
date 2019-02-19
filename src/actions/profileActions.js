@@ -101,3 +101,16 @@ export const deleteEducation = (id)=>dispatch=>{
         payload:err.response.data
     }))
 }
+
+export const getProfiles = ()=>dispatch=>{
+    dispatch(setProfileLoading())
+    axios.get('/api/profile/all').then(res=>{
+        dispatch({
+            type:GET_PROFILES,
+            payload:res.data
+        })
+    }).catch(error=>dispatch({
+        type:GET_PROFILES,
+        payload:null
+    }))
+}
