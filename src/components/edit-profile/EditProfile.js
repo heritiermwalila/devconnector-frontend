@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import TextField from '../common/TextField';
@@ -138,6 +138,7 @@ class EditProfile extends Component {
         <div className="container">
             <div className="row">
                 <div className="col-md-8 m-auto">
+                    <Link to="/dashboard" className="btn btn-light">Go Back</Link>
                     <h1 className="display-4 text-center">Edit Your Profile</h1>
                     <p className="lead text-center">Edit your profile by updating the form data</p>
                     <small className="d-block pd-3">* = required field is required</small>
