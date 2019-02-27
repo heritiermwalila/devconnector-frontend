@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GET_PROFILE, GET_PROFILES, PROFILE_LOADING, PROFILE_NOT_FOUND, CLEAR_CURRENT_PROFILE, GET_ERRORS, SET_CURRENT_USER } from './types'
+import { GET_PROFILE, GET_PROFILES, PROFILE_LOADING, CLEAR_CURRENT_PROFILE, GET_ERRORS, SET_CURRENT_USER } from './types'
 
 
 //get profile for logged in user
@@ -113,4 +113,15 @@ export const getProfiles = ()=>dispatch=>{
         type:GET_PROFILES,
         payload:null
     }))
+}
+
+export const getProfileByHandle = (handle)=>dispatch=>{
+    axios.get(`/api/profile/handle/${handle}`)
+        .then(res=>dispatch({
+            type:GET_PROFILE,
+            payload:res.data
+        })).catch(error=>dispatch({
+            type:GET_PROFILE,
+            payload:null
+        }))
 }
