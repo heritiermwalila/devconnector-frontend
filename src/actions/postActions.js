@@ -35,3 +35,13 @@ export const getPost = (id) => dispatch =>{
         }))
 
 }
+
+
+export const addComment = (postId, comment)=>dispatch=>{
+    axios.post(`/api/posts/comment/${postId}`, comment)
+        .then(res=>console.log(res.data))
+        .catch(error=>dispatch({
+            type:GET_ERRORS,
+            payload:error.response.data
+        }))
+}

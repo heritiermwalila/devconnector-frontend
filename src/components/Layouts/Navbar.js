@@ -21,7 +21,7 @@ class Navbar extends Component {
             <li className="nav-item"><Link to="/post-feed" className="nav-link">Post Feed</Link></li>
             <li className="nav-item"><Link to="/dashboard" className="nav-link">Dashboard</Link></li>
             <li className="nav-item">
-                <span href="" className="nav-link" onClick={this.onLogout.bind(this)}>
+                <span className="nav-link log-out" onClick={this.onLogout.bind(this)}>
                 <img className="rounded-circle" src={user.avatar} title="your email must be connected ti gravatar in order to have your own image" alt={user.name} style={{ width:'25px', marginRight:'5px'}}/>
                 Logout</span>
             </li>

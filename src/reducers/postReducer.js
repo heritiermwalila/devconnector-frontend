@@ -1,4 +1,4 @@
-import { ADD_POST, GET_POSTS, GET_POST } from "../actions/types";
+import { ADD_POST, GET_POSTS, GET_POST, ADD_COMMENT } from "../actions/types";
 
 const initialState = {
     posts:[],
@@ -25,6 +25,11 @@ export default function(state = initialState, action){
                 ...state,
                 post:action.payload,
                 loading:false
+            }
+        case ADD_COMMENT:
+            return{
+                ...state,
+                post:{...state.post, comments:[...state.post.comments, action.payload]}
             }
         default:
         return state;

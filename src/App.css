@@ -37,4 +37,7 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+.log-out{
+  cursor: pointer;
+}
 
